@@ -1,0 +1,68 @@
+########### VBA CODE TO CONVERT NUMBER TO WORDS   #############
+
+Function NumberToWords(ByVal MyNumber As Variant) As String
+    Dim Units As Variant, Tens As Variant
+    Dim Temp As String
+    Dim DecimalPlace As Integer
+    Dim IntegerPart As String, DecimalPart As String
+
+    ' Arrays to store words for numbers
+    Units = Array("", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine")
+    Tens = Array("", "", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety")
+    Dim Teens As Variant
+    Teens = Array("Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen")
+
+    ' Validate the input
+    If Not IsNumeric(MyNumber) Then
+        NumberToWords = "Invalid Input"
+        Exit Function
+    End If
+
+    ' Split the number into integer and decimal parts
+    MyNumber = Format(MyNumber, "0.00")
+    DecimalPlace = InStr(MyNumber, ".")
+    IntegerPart = Left(MyNumber, DecimalPlace - 1)
+    DecimalPart = Mid(MyNumber, DecimalPlace + 1)
+
+    ' Convert the integer part to words
+    NumberToWords = ConvertWholeNumber(IntegerPart, Units, Tens, Teens)
+
+    ' Add decimal part (if any)
+    If Val(DecimalPart) > 0 Then
+        NumberToWords = NumberToWords & " and " & ConvertWholeNumber(DecimalPart, Units, Tens, Teens) & " Cents"
+    End If
+End Function
+
+Function ConvertWholeNumber(ByVal Num As String, Units As Variant, Tens As Variant, Teens As Variant) As String
+    Dim Result As String
+    Dim n As Long
+    n = Val(Num)
+
+    ' Handle thousands
+    If n >= 1000 Then
+        Result = ConvertWholeNumber(Int(n / 1000), Units, Tens, Teens) & " Thousand "
+        n = n Mod 1000
+    End If
+
+    ' Handle hundreds
+    If n >= 100 Then
+        Result = Result & Units(Int(n / 100)) & " Hundred "
+        n = n Mod 100
+    End If
+
+    ' Handle tens and units
+    If n >= 20 Then
+        Result = Result & Tens(Int(n / 10)) & " "
+        n = n Mod 10
+    ElseIf n >= 10 Then
+        Result = Result & Teens(n - 10) & " "
+        n = 0
+    End If
+
+    ' Handle units
+    If n > 0 Then
+        Result = Result & Units(n) & " "
+    End If
+
+    ConvertWholeNumber = Trim(Result)
+End Function
