@@ -1,1 +1,90 @@
-demo
+Data Analytics
+--------------
+1. Data Collection: means gathering informations
+form various sources 
+databases
+APIs
+excel sheets
+websites
+surveys
+web scraping
+CRM
+salesforce
+
+Tools used for data collections:
+--> python (to fetch data from API or scraping)
+--> sql (to fetch data from database)
+--> Manual suveys/forms(google sheets and excel uploads)
+--> CRM 
+
+2. Data preparations: means cleaning, organising and structuring raw data into usable form for analysis.
+
+steps for DP:
+1. data cleaning (remove duplicate rows, handle missing value, correct inconsistency, standardize values)
+
+2. Data Transformation: Creating new calculated column,
+normalization and aggregations
+
+3. Data integration: combine data from multiple sources
+(joins)
+
+4. Data Validation: check for wrong data or anomalies.
+(negative age, blank product name)
+
+Tools used for data Preparations:
+----------------------------------
+Excel (basic cleaning)
+sql (query and cleaning)
+python (pandas library)
+power bi (power query editor)
+
+======================================
+3. insight generation and dash board creation?
+
+insight generation : after cleaning data , you analyse to find all the hidden patterns and trends and relationship.
+eg: "finding that sales increase during the festival 
+season" ===> insight(observations)
+
+steps for insight generations:
+1. EDA (perform exploratory data analysis)
+2. KPIs (revenue, profits, number of customers)
+3. find correlation(does more advertisement lead to sales)
+4. create a story around findings.
+
+creation of dashboard?
+1. understand the business requirement?
+-> what does the user want to see?
+    eg: monthly sales, top products)
+
+2. sketch a layout
+-before building in powerbi , draw it on papaer or tools like figma
+-top --- KPI (totals sales , total orders)
+-middle row --> trend charts(sales over time)
+-bottom row --> top 5 products, regional sales
+
+3. choose the rights visuals
+-> line chart (for trends over time)
+-> bar chart (comparison)
+-> pie chart (proportions)
+-> KPI cards (highlights numbers)
+
+4. Build dashboard
+- import data
+-create visuals
+-apply filters (time range, product category)
+
+5. make it interactive:
+- slicers
+- drill-down options
+- tooltip info
+
+6. testing and feedback
+---> show to stakeholders
+---> create feedback and refine
+
+7. publish / share:
+=--> publish to power bi service , tableau servers or pdf report
+
+
+
+
