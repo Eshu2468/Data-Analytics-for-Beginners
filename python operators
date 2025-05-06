@@ -1,0 +1,93 @@
+'''
+#operators
+
+1. Arithametic operators  + - * / % ** //
+2. assignment operator  += -=  *= /= %= **= //= &= != <<= >>= 
+3. comparison operator ==  != > < >= <=
+4. logical operator  and or not
+5. identity opertor  is    is not
+6. membership operator  in   not in 
+7. bitwise operator | & ~ ^ << >>
+
+'''
+
+
+'''
+# 1. Arithametic operators  + - * / % ** //
+
+divya = 20 + 7
+print(divya)
+
+x=5
+y=10
+print(x+y)
+print(x-y)
+print(x*y)
+print(x/y)  #divide  0.5 (decimal output)
+print(x//y)  #floor divide  (int ==> 0)
+print(x % y) #modulus #gives output as remainder
+print(x ** y)  #exponent ** --> square
+
+
+a = 5
+b = 2
+print(a % b)
+
+
+2. assignment operator
+'''
+
+# x = 5  #=
+#x+=3  #add and assign +=
+#x-=3  #sub and assign -=
+#x*=2  #mul and assign *=
+#x/=3 #divide and assign /=
+#x//=3 #floor divide and assign //=
+# x%=3 #modulus and asign %=
+# x**=3 #exponent and assign **=
+#x &= 3  #bitwise AND 0001 ==> 1  5 --> 0101 and for 3 0011
+# print(x)
+
+#comparison operator ==  != > < >= <=  #print true or false as output
+
+a = 5
+b = 10
+'''
+print(a==b)  #false
+print(a>b) #false
+print(a != b)  #true
+print(a < b)   #true
+print(a>=b)  #false
+print(a<=b)  #true
+'''
+
+
+a = 5
+# and = return true when both conditions are true
+#or  = returns true when one condition in statements are true.
+#not = return true as false and false value as true
+
+
+# print(a>6 or a<10)  
+
+# print(a>6 or a>20)  #false
+
+# print(not(a>6 or a>20))   #not example #false  ==> converst output as true
+
+#not logical operator revers the result
+
+
+#identity operator  #is 
+
+x = ["divya" , "Harika"]
+y = ["saravanan" , "vilas"]
+z = x
+
+
+print(x is z)
+print(x)
+print(z)
+
+print(x is y)
+
+print(x == y)
